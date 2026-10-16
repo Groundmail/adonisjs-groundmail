@@ -1,0 +1,67 @@
+{
+  "name": "adonisjs-groundmail",
+  "version": "0.1.0",
+  "description": "AdonisJS mail transport for Groundmail transactional email (@adonisjs/mail)",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Groundmail/adonisjs-groundmail.git"
+  },
+  "homepage": "https://docs.groundmail.dev/frameworks/adonisjs",
+  "bugs": {
+    "url": "https://github.com/Groundmail/adonisjs-groundmail/issues"
+  },
+  "keywords": [
+    "adonisjs",
+    "adonis",
+    "adonisjs-mail",
+    "adonis-mail",
+    "mail-transport",
+    "email",
+    "transactional-email",
+    "groundmail"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20.6.0"
+  },
+  "peerDependencies": {
+    "@adonisjs/mail": "^9.0.0 || ^10.0.0"
+  },
+  "dependencies": {
+    "groundmail": ">=0.14.5 <1.0.0",
+    "groundmail-nodemailer": ">=0.14.5 <1.0.0",
+    "nodemailer": ">=6.9.0"
+  },
+  "devDependencies": {
+    "@adonisjs/core": "^7.0.0",
+    "@adonisjs/mail": "^10.4.0",
+    "@types/node": "^22",
+    "@types/nodemailer": "^8.0.1",
+    "tsup": "^8.5.0",
+    "typescript": "^5",
+    "vitest": "^3.2.4"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --target node20 --clean",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build"
+  }
+}
